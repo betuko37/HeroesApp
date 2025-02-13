@@ -49,6 +49,20 @@ export const Navbar = () => {
         >
           DC
         </NavLink>
+
+        <NavLink
+          to="/search"
+          className={({ isActive }) =>
+            isActive
+              ? "block md:inline text-lg font-semibold text-white px-4 py-2 rounded-lg bg-red-700 transition duration-300 hover:bg-red-800 hover:shadow-md"
+              : "block md:inline text-lg font-semibold text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-red-800 hover:shadow-md"
+          }
+          onClick={() => setIsOpen(false)}
+        >
+          Search
+        </NavLink>
+
+
         <NavLink
           to="/login"
           className="block md:inline text-lg font-semibold text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-red-800 hover:shadow-md"
