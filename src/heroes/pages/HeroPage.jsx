@@ -15,7 +15,7 @@ export const HeroPage = () => {
             {/* Hero Image */}
             <div className="w-full md:w-1/2 flex justify-center animate__animated animate__zoomIn">
                 <img 
-                    src={`/assets/${hero.id}.jpg`} 
+                    src={`./assets/${hero.id}.jpg`} 
                     alt={hero.superhero} 
                     className="w-full max-w-md rounded-lg shadow-2xl border-4 border-red-500"
                 />
