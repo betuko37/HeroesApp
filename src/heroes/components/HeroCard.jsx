@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 export const HeroCard = ({id,superhero,publisher,alter_ego,first_apperance, characters,}) => {
 
-    const heroImage = `./assets/${id}.jpg`;
+    const heroImage = `/assets/${id}.jpg`;
 
     return (
         <div className="max-w-2xs mx-auto bg-red-900 rounded-2xl shadow-[0_15px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.7)] overflow-hidden transform transition duration-300 hover:scale-105 border-3 border-red-950">
