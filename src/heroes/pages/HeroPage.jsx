@@ -10,12 +10,15 @@ export const HeroPage = () => {
         return <Navigate to={"/marvel"} />;
     }
 
+    const heroImage = `/assets/${hero.id}.jpg`;
+
+
     return (
         <div className="flex flex-col md:flex-row items-center md:items-start gap-10 p-10 bg-gradient-to-r from-red-900 to-red-700 text-white justify-center animate__animated animate__fadeIn">
             {/* Hero Image */}
             <div className="w-full md:w-1/2 flex justify-center animate__animated animate__zoomIn">
                 <img 
-                    src={`/assets/${hero.id}.jpg`} 
+                    src={heroImage} 
                     alt={hero.superhero} 
                     className="w-full max-w-md rounded-lg shadow-2xl border-4 border-red-500"
                 />
