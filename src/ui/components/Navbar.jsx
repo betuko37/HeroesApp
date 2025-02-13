@@ -12,7 +12,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="bg-red-900 shadow-lg w-full py-4 px-10 flex justify-between items-center relative z-50">
+    <nav className="bg-red-900 shadow-lg w-full py-4 px-10 flex justify-between items-center z-50 fixed">
       {/* Logo */}
       <Link
         className="text-2xl font-bold uppercase text-white tracking-widest hover:text-gray-300 transition"

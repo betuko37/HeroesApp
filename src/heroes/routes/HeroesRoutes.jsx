@@ -7,7 +7,7 @@ export const HeroesRoutes = () => {
     <div className="bg-red-950  h-screen text-2xl text-white">
       <Navbar />
 
-      <div className="container mx-auto px-2 py-6">
+      <div className="container mx-auto px-2 py-25">
         <Routes>
           {/* Heroes Router */}
           <Route path="/marvel" element={<MarvelPage />} />

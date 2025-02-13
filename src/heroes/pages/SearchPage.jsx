@@ -53,20 +53,22 @@ export const SearchPage = () => {
                     <hr className="my-2" />
                     
                     {/* Alerta de búsqueda */}
-                    <div className="bg-blue-200 text-blue-700 p-3 rounded-lg text-center mt-4">
+                    <div className="hidden bg-blue-200 text-blue-700 p-3 rounded-lg text-center mt-4">
                         Search for a hero
                     </div>
 
                     {/* Alerta de error */}
-                    <div className="bg-red-200 text-red-700 p-3 rounded-lg text-center mt-4">
+                    <div className="hidden bg-red-200 text-red-700 p-3 rounded-lg text-center mt-4">
                         No hero found with <b>{q}</b>
                     </div>
 
+                        <div className="flex gap-3">
                         {
                             heroes.map( hero => (
                                 <HeroCard key={hero.id} {...hero}/>
                             ))
                         }
+                        </div>
 
                 </div>
             </div>
