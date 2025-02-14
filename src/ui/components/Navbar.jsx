@@ -1,14 +1,19 @@
 import { Link, NavLink, useNavigate } from "react-router";
 import { FaBars } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../auth/context/AuthContext";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
+  const { logged, user, login, logout } = useContext(AuthContext);
+  console.log("Usuario en Navbar:", user); 
+
   const onLogout = () => {
     setIsOpen(false);
     navigate("/login", { replace: true });
+    logout();
   };
 
   return (
@@ -27,6 +32,14 @@ export const Navbar = () => {
           isOpen ? "block z-50" : "hidden"
         } absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-red-900 md:bg-transparent p-4 md:p-0 shadow-md md:shadow-none`}
       >
+        <div>
+      {logged ? (
+        <h1>Bienvenido, {user.name}</h1>
+      ) : (
+        <button onClick={() => login("Jesús")}>Iniciar Sesión</button>
+      )}
+    </div>
+
         <NavLink
           to="/marvel"
           className={({ isActive }) =>
@@ -61,7 +74,6 @@ export const Navbar = () => {
         >
           Search
         </NavLink>
-
 
         <NavLink
           to="/login"
