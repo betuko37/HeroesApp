@@ -7,8 +7,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  const { logged, user, login, logout } = useContext(AuthContext);
-  console.log("Usuario en Navbar:", user); 
+  const { logged, user, logout } = useContext(AuthContext);
 
   const onLogout = () => {
     setIsOpen(false);
@@ -28,35 +27,34 @@ export const Navbar = () => {
 
       {/* Navigation Links */}
       <div
-        className={`md:flex gap-6 ${
+        className={`md:flex items-center gap-6 ${
           isOpen ? "block z-50" : "hidden"
         } absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-red-900 md:bg-transparent p-4 md:p-0 shadow-md md:shadow-none`}
       >
-        <div>
-      {logged ? (
-        <h1>Bienvenido, {user.name}</h1>
-      ) : (
-        <button onClick={() => login("Jesús")}>Iniciar Sesión</button>
-      )}
-    </div>
+        {logged && (
+          <span className="text-white font-semibold px-4 py-2 rounded-lg bg-red-800">
+            Bienvenido, {user.name} 👋
+          </span>
+        )}
 
         <NavLink
           to="/marvel"
           className={({ isActive }) =>
             isActive
-              ? "block md:inline text-lg font-semibold text-white px-4 py-2 rounded-lg bg-red-700 transition duration-300 hover:bg-red-800 hover:shadow-md"
-              : "block md:inline text-lg font-semibold text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-red-800 hover:shadow-md"
+              ? "text-lg font-semibold text-white px-4 py-2 rounded-lg bg-red-700 transition duration-300 hover:bg-red-800 hover:shadow-md"
+              : "text-lg font-semibold text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-red-800 hover:shadow-md"
           }
           onClick={() => setIsOpen(false)}
         >
           Marvel
         </NavLink>
+
         <NavLink
           to="/dc"
           className={({ isActive }) =>
             isActive
-              ? "block md:inline text-lg font-semibold text-white px-4 py-2 rounded-lg bg-red-700 transition duration-300 hover:bg-red-800 hover:shadow-md"
-              : "block md:inline text-lg font-semibold text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-red-800 hover:shadow-md"
+              ? "text-lg font-semibold text-white px-4 py-2 rounded-lg bg-red-700 transition duration-300 hover:bg-red-800 hover:shadow-md"
+              : "text-lg font-semibold text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-red-800 hover:shadow-md"
           }
           onClick={() => setIsOpen(false)}
         >
@@ -67,8 +65,8 @@ export const Navbar = () => {
           to="/search"
           className={({ isActive }) =>
             isActive
-              ? "block md:inline text-lg font-semibold text-white px-4 py-2 rounded-lg bg-red-700 transition duration-300 hover:bg-red-800 hover:shadow-md"
-              : "block md:inline text-lg font-semibold text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-red-800 hover:shadow-md"
+              ? "text-lg font-semibold text-white px-4 py-2 rounded-lg bg-red-700 transition duration-300 hover:bg-red-800 hover:shadow-md"
+              : "text-lg font-semibold text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-red-800 hover:shadow-md"
           }
           onClick={() => setIsOpen(false)}
         >
@@ -77,7 +75,7 @@ export const Navbar = () => {
 
         <NavLink
           to="/login"
-          className="block md:inline text-lg font-semibold text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-red-800 hover:shadow-md"
+          className="text-lg font-semibold text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-red-800 hover:shadow-md"
           onClick={onLogout}
         >
           Logout

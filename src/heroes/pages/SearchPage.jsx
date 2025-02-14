@@ -22,7 +22,7 @@ export const SearchPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center p-6 animate__animated animate__fadeIn">
+    <div className=" h-screen flex items-center justify-start p-6 animate__animated animate__fadeIn">
       <div className="bg-red-900 shadow-lg rounded-2xl p-8 w-full max-w-7xl flex flex-col md:flex-row gap-6 animate__animated animate__zoomIn">
         {/* Formulario de búsqueda - Izquierda */}
         <div className="w-full md:w-1/2 animate__animated animate__fadeInLeft">

@@ -4,7 +4,7 @@ import { Navbar } from "../../ui";;
 
 export const HeroesRoutes = () => {
   return (
-    <div className="bg-red-950  h-screen text-2xl text-white">
+    <div className="bg-gradient-to-r from-black via-red-950 to-black  h-full text-2xl text-white">
       <Navbar />
 
       <div className="container mx-auto px-2 py-25">
