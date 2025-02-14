@@ -7,7 +7,7 @@ export const HeroCard = ({id,superhero,publisher,alter_ego,first_apperance, char
     const heroImage = `/assets/${id}.jpg`;
 
     return (
-        <div className="max-w-2xs mx-auto bg-red-900 rounded-2xl shadow-[0_15px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.7)] overflow-hidden transform transition duration-300 hover:scale-105 border-3 border-red-950">
+        <div className="max-w-2xs mx-auto bg-red-900 rounded-2xl shadow-[0_15px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.7)] overflow-hidden transform transition duration-300 hover:scale-105 border-3 border-red-950 animate__animated animate__bounceInUp">
             <img 
                 className="w-70 h-60 object-cover object-top" 
                 src={heroImage} 
