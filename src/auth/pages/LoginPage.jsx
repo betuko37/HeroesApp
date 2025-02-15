@@ -8,31 +8,33 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const onLogin = () => {
-    const lastPath = localStorage.getItem("lastPath") || "/marvel";
+    const lastPath = localStorage.getItem("lastPath") ?? "/marvel";
     login("Jesus Zavala");
     navigate(lastPath, { replace: true });
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen flex-col md:flex-row">
       {/* Sección Izquierda - Imagen */}
       <div
-        className="w-1/2 bg-cover bg-center"
+        className="w-full md:w-1/2 bg-cover bg-center h-72 md:h-screen"
         style={{
           backgroundImage: "url('/assets/back.jpg')",
         }}
       ></div>
 
       {/* Sección Derecha - Formulario */}
-      <div className="w-1/2 bg-black flex justify-center items-center">
-        <div className="w-2xl p-10 bg-white/90 shadow-2xl rounded-lg">
+      <div className="w-full md:w-1/2 bg-black flex justify-center items-center p-6 sm:p-4">
+        <div className="w-full sm:w-3/4 lg:w-120 xl:w-150 p-6 sm:p-8 bg-white/90 shadow-2xl rounded-lg">
           {/* Logo */}
           <div className="flex justify-center mb-6">
-            <img src="/assets/R.png" alt="Marvel Logo" className="h-25" />
+            <img src="/assets/R.png" alt="Marvel Logo" className="h-20 sm:h-25" />
           </div>
 
           {/* Título */}
-          <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Bienvenido de Nuevo !!</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">
+            Bienvenido de Nuevo !!
+          </h1>
 
           {/* Inputs */}
           <div className="flex flex-col gap-4">
@@ -78,7 +80,10 @@ export const LoginPage = () => {
 
           {/* Registro */}
           <p className="text-center text-gray-600 text-sm mt-4">
-            ¿No tienes cuenta? <a href="#" className="text-red-500 hover:underline">Regístrate aquí</a>
+            ¿No tienes cuenta?{" "}
+            <a href="#" className="text-red-500 hover:underline">
+              Regístrate aquí
+            </a>
           </p>
         </div>
       </div>

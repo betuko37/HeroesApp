@@ -8,7 +8,7 @@ export const PublicRoute = ({ children }) => {
  
     const { logged } = useContext(AuthContext);
  
-    const lastPath = localStorage.getItem('lastPath');
+    const lastPath = localStorage.getItem('lastPath') ?? "/marvel"; // Valor predeterminado
  
     return !logged ? children : <Navigate to={lastPath} />
 }
