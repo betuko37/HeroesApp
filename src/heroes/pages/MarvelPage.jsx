@@ -5,7 +5,7 @@ export const MarvelPage = () => {
 
 
     return (
-        <div className="min-h-screen p-8">
+        <div className="min-h-screen p-2">
             <div className="container mx-auto text-center px-4 py-12">
                 {/* Título con sombra y estilo llamativo */}
                 <h1 className="text-6xl font-extrabold text-white drop-shadow-xl mb-6">

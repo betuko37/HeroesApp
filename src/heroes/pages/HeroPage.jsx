@@ -14,7 +14,7 @@ export const HeroPage = () => {
 
 
     return (
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-10 p-10 bg-gradient-to-r from-red-900 to-red-700 text-white justify-center animate__animated animate__fadeIn">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-10 p-10 bg-gradient-to-r from-black to-black text-white justify-center animate__animated animate__fadeIn">
             {/* Hero Image */}
             <div className="w-full md:w-1/2 flex justify-center animate__animated animate__zoomIn">
                 <img 

@@ -22,24 +22,24 @@ export const SearchPage = () => {
   };
 
   return (
-    <div className=" h-screen flex items-center justify-start p-6 animate__animated animate__fadeIn">
-      <div className="bg-red-900 shadow-lg rounded-2xl p-8 w-full max-w-7xl flex flex-col md:flex-row gap-6 animate__animated animate__zoomIn">
+    <div className="h-screen p-6 animate__animated animate__fadeIn">
+      <div className="bg-red-800 shadow-xl rounded-2xl p-8 w-full max-w-7xl flex flex-col md:flex-row gap-6 animate__animated animate__zoomIn">
         {/* Formulario de búsqueda - Izquierda */}
         <div className="w-full md:w-1/2 animate__animated animate__fadeInLeft">
-          <h1 className="text-3xl font-bold text-gray-100 mb-6 ">
+          <h1 className="text-3xl font-bold text-gray-200 mb-6 text-center md:text-left">
             Search for a Hero
           </h1>
           <form onSubmit={onSearchSubmit} className="flex flex-col gap-4">
             <input
               type="text"
               placeholder="Search a Hero"
-              className="w-full text-lg p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full text-lg p-3 border text-black bg-gray-50 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"
               name="searchText"
               autoComplete="off"
               value={searchText}
               onChange={onInputChange}
             />
-            <button className="bg-white text-red-950 px-6 py-3 rounded-lg font-semibold hover:bg-red-950 hover:text-white cursor-pointer transition animate__animated animate__bounce">
+            <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-950 cursor-pointer transition ease-in-out duration-300 transform hover:scale-105 animate__animated animate__bounce">
               Search
             </button>
           </form>
@@ -47,7 +47,7 @@ export const SearchPage = () => {
 
         {/* Resultados - Derecha */}
         <div className="w-full md:w-1/2 animate__animated animate__fadeInRight">
-          <h4 className="text-xl font-semibold text-gray-200">Results</h4>
+          <h4 className="text-xl font-semibold text-gray-100">Results</h4>
           <hr className="my-2" />
 
           {q === "" ? (
@@ -65,7 +65,7 @@ export const SearchPage = () => {
           {/* Contenedor en Grid para las cartas */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 mt-4">
             {heroes.map((hero) => (
-              <HeroCard key={hero.id} {...hero}  />
+              <HeroCard key={hero.id} {...hero} />
             ))}
           </div>
         </div>
